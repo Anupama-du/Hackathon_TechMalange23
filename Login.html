@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title> COVIID BITE</title>
+        
+        <!-- font awesome cdn link  -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      
+        <!-- ===== Iconscout CSS ===== -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    </head>
+
+    <body>
+        <header>      
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+      
+            <nav class="navbar">
+                <a href="Home.html">Home</a></li>
+                <a href="Booking.html">Booking</a></li>
+                <a href="Self Try-Out.html">Self Test</a></li>
+                <a href="Contact.html">Contact</a></li>
+                <a href="FAQs.html">FAQ's</a></li>
+                <a href="Hospitals.html">Hospitals</a></li>
+                <a href="Tips.html">Tips</a></li>
+                <a href="Feedback.html">Feedback</a></li>
+                <a href="Login.html">Login</a></li>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="login-btn"></i>
+            </div>
+        </header>
+        
+        <h1 class = "heading">
+            <span> L </span>
+            <span> O </span>
+            <span> G </span>
+            <span> I </span>
+            <span> N </span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="Images and Videos/Doctors-cuate.svg" alt="">
+            </div>
+            <h2>
+                <form>                              
+                <div class="inputBox">
+                    <i class="uil uil-user"></i>
+                    User Name : <input type="text"  name = "u" required/>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <i class="uil uil-lock icon"></i>
+                    Password : <input type="password" name = "p" required/>
+                </div>
+                <br>
+
+                <div class="pass">
+					<label>Remember Me?</label>
+					<input id="show" type="checkbox">
+				</div>
+                <br>
+                <input type="submit" class="btn"  value="Proceed" name="Submit"  onclick="validation(this.form)"/>
+
+				<div class="signin">
+					<h4>Don't have an account?</h4>
+					<a href="Sign-Up.html">Signup Here</a>
+				</div>
+
+                </form>
+            </h2>
+        </div>
+        
+
+        <script>
+            var uname = "admin";
+            var pass = "1234";
+
+           function validation(f1)
+           {
+                if((f1.u.value == "") && (f1.p.value == ""))
+                {
+                    alert("Please enter credentials!!"); 
+                }
+                
+                else if((f1.u.value != uname) || (f1.p.value != pass))
+                {
+                    alert("Username or Password is Wrong!!"); 
+                }
+
+                else
+                {
+                    alert("WELCOME " + uname + " !!");
+                }
+           }
+
+           /*
+            
+                if((f1.u.value == uname) && (f1.p.value == pass))
+                {
+                    alert("WELCOME " + uname + " !!"); 
+                }
+                
+                else if((f1.u.value != uname) || (f1.p.value != pass))
+                {
+                    alert("Username or Password is Wrong!!"); 
+                }
+
+                else 
+                {
+                    if(f1.u.value == "")
+                    {
+                        alert("Please enter username!!"); 
+                    }
+                
+                    else if(f1.p.value == "")
+                    {
+                        alert("Please enter password!!"); 
+                    }
+
+                    else
+                    {
+                        alert("Please enter credentials!!");
+                    }
+                }
+
+           */
+            
+        </script>
+    </body>
+</html>

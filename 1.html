@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style3.css">
+        <title> Covid Bite </title>
+    </head>
+
+    <body>
+        <div class="quiz-container" id="test">
+            <div class="quiz-header">
+              <h2 id="question">Question Text</h2>
+              <ul>
+                <li>
+                  <input type="radio" name="answer" id="a" class="answer">
+                  <label for="a" id="a_text">Answer</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="b" class="answer">
+                  <label for="b" id="b_text">Answer</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="c" class="answer">
+                  <label for="c" id="c_text">Answer</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="d" class="answer">
+                  <label for="d" id="d_text">Answer</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="e" class="answer">
+                    <label for="e" id="e_text">Answer</label>
+                  </li>
+              </ul>
+            </div>
+            <button id="submit">Submit</button>
+          </div>    
+
+          <script>
+              const quizData = [
+                                    {
+                                        question: "Which age group do you belong?",
+                                        a: "0-12",
+                                        b: "13-19",
+                                        c: "20-40",
+                                        d: "40-60",
+                                        e: "80+",
+                                    },
+                                    {
+                                        question: "Have you taken Vaccination?",
+                                        a: "1st Dose",
+                                        b: "2nd Dose",
+                                        c: "3rd Dose",
+                                        d: "All of the Above",
+                                        e: "None",
+                                    },
+                                    {
+                                        question: "Are you currently experiencing any of the following symptoms?",
+                                        a: "Cough",
+                                        b: "Fever",
+                                        c: "Sore Throat",
+                                        d: "Difficulty in Breathing",
+                                        e: "None of the Above",
+                                    },
+                                    {
+                                        question: "Do you have anhy of these pre-existing conditions?",
+                                        a: "Diabetes",
+                                        b: "Hypertension",
+                                        c: "Lung Disease",
+                                        d: "Heart Disease",
+                                        e: "None of the Above",
+                                    },
+                                    {
+                                        question: "Have you travelled anywhere in past 14 days?",
+                                        a: "Yes, around my locality only",
+                                        b: "Yes, within the country only",
+                                        c: "Yes, outside the country only",
+                                        d: "No, but ineracted with someone who travelled",
+                                        e: "None of above",
+                                    },
+                                    {
+                                        question: "Select one from below?",
+                                        a: "I have recently interacted or lived with someone who has tested positive for COVID-19",
+                                        b: "I am a healthcare worker and I examined a COVID-19 confirmed case without protective gear",
+                                        c: "I am a healthcare worker and I didn't examined a COVID-19 confirmed case without protective gear",
+                                        d: "I am not a healthcare worker but came across a COVID-19 confirmed case without protective gear",
+                                        e: "None of above",
+                                    },
+                                ];
+                                const test= document.getElementById('test')
+                                const answerEls = document.querySelectorAll('.answer')
+                                const questionEl = document.getElementById('question')
+                                const a_text = document.getElementById('a_text')
+                                const b_text = document.getElementById('b_text')
+                                const c_text = document.getElementById('c_text')
+                                const d_text = document.getElementById('d_text')
+                                const e_text = document.getElementById('e_text')
+                                const submitBtn = document.getElementById('submit')
+                                let currentQuiz = 0
+                                loadQuiz()
+                                function loadQuiz() {
+                                deselectAnswers()
+                                const currentQuizData = quizData[currentQuiz]
+                                questionEl.innerText = currentQuizData.question
+                                a_text.innerText = currentQuizData.a
+                                b_text.innerText = currentQuizData.b
+                                c_text.innerText = currentQuizData.c
+                                d_text.innerText = currentQuizData.d
+                                e_text.innerText = currentQuizData.e
+                                }
+                                function deselectAnswers() {
+                                answerEls.forEach(answerEl => answerEl.checked = false)
+                                }
+                                function getSelected() {
+                                let answer
+                                answerEls.forEach(answerEl => {
+                                    if(answerEl.checked) {
+                                        answer = answerEl.id
+                                    }
+                                })
+                                return answer
+                                }
+                                submitBtn.addEventListener('click', () => {
+                                                    const answer = getSelected()
+                                                    if(answer) {
+                                                    if(answer === quizData[currentQuiz].correct) {
+                                                        score++
+                                                    }
+                                                    currentQuiz++
+                                                    if(currentQuiz < quizData.length) {
+                                                        loadQuiz()
+                                                    } else {
+                                                        quiz.innerHTML = "Your Report is Ready !!";
+                                                        <button onclick="location.reload()">Check Report</button>
+                                                        
+                                                    }
+                                                    }
+                                                })
+          </script>
+    </body>
+</html>

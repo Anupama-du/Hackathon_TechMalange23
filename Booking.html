@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title> Covid Bite </title>
+
+         <!-- font awesome cdn link  -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <header>      
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+      
+            <nav class="navbar">
+                <a href="Home.html">Home</a></li>
+                <a href="Booking.html">Booking</a></li>
+                <a href="Self Try-Out.html">Self Test</a></li>
+                <a href="Contact.html">Contact</a></li>
+                <a href="FAQs.html">FAQ's</a></li>
+                <a href="Hospitals.html">Hospitals</a></li>
+                <a href="Tips.html">Tips</a></li>
+                <a href="Feedback.html">Feedback</a></li>
+                <a href="Login.html">Login</a></li>
+            </nav>
+      
+            <div class="icons">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="login-btn"></i>
+            </div>
+        </header>
+    
+        
+        <h1 class = "heading">
+            <span> b </span>
+            <span> o </span>
+            <span> o </span>
+            <span> k </span>
+            <span> - </span>
+            <span> a </span>
+            <span> p </span>
+            <span> p </span>
+            <span> o </span>
+            <span> i </span>
+            <span> n </span>
+            <span> t </span>
+            <span> m </span>
+            <span> e </span>
+            <span> n </span>
+            <span> t </span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="Images and Videos/Online Doctor-amico.svg" alt="">
+            </div>
+            
+            <h2>
+                <form>
+                    <div class="inputBox">
+                        Date : <input type="date" name="d" required>
+                    </div><br>
+
+                    <div class="inputBox">
+                        Time Slot : 
+                        <select class="select-option" name="t" required>
+                            <option> Select </option>
+                            <option> 10:00 a.m. - 11:00 a.m. </option>
+                            <option> 11:00 a.m. - 12:00 p.m. </option>
+                            <option> 1:00 p.m. - 2:00 p.m.</option>
+                            <option> 2:00 p.m. - 3:00 p.m. </option>
+                            <option> 3:00 p.m. - 4:00 p.m.</option>
+                            <option> 4:00 p.m. - 5:00 p.m. </option>
+                        </select>
+                    </div><br>
+
+                    <div class="inputBox">
+                        Disease : 
+                        <select class="select-option" name="i" required>
+                            <option> From What Disease Are You Sufferring..?? </option>
+                            <option> Cough 'N' Cold </option>
+                            <option> Difficulty in Breathing </option>
+                            <option> Fever or Chills </option>
+                            <option> Sore throat </option>
+                            <option> Loss of Taste or Smell </option>
+                            <option> Persistent pain or pressure in the chest </option>
+                        </select>
+                    </div><br>
+
+                    <div class="inputBox">
+                        Hospital : 
+                        <select class="select-option" name="h" required>
+                            <option> Select Hospital </option>
+                            <option> Maharaja Agrasen Hospital </option>
+                            <option> Kalra Hospitals </option>
+                            <option> Khetarpal Hospital </option>
+                            <option> Sir Ganga Ram Hospital </option>
+                            <option> Indraprastha Apollo Hospital </option>
+                            <option> Max Super Speciality Hospital </option>
+                        </select>
+                    </div><br>
+
+                    <input type="submit" class="btn" value="BOOK" onclick="validation(this.form)"/> 
+
+                  </form>
+                </h2>
+        </div>
+
+        <script>
+
+
+            function validation(f1)
+            {
+                if((f1.d.value === "") && (f1.t.value === "") && (f1.i.value === "") && (f1.h.value === ""))
+                {
+                    alert("Please enter complete details!!"); 
+                }
+        
+                else if((f1.d.value !== "") && (f1.t.value !== "") && (f1.t.value === "") && (f1.h.value !== ""))
+                {
+                    alert("\n Booking Successful !!");
+                }
+
+        }
+        </script>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+    if(f1.s.value == "")
+                    {
+                        alert("Please fill your starting point");
+                    }
+
+                    if(f1.d.value == "")
+                    {
+                        alert("Please fill your destination");
+                    }
+
+                    if((f1.q.value == "") && (f1.q.value > 1))
+                    {
+                        alert("Please fill no. of people");
+                    }
+
+                    if(f1.ad.value == "")
+                    {
+                        alert("Please fill your arrival date");
+                    }
+
+                    if(f1.dd.value == "")
+                    {
+                        alert("Please fill your departure date");
+                    }
+
+                    else if((f1.s.value !== "") && (f1.d.value !== "") && (f1.q.value !== "") && (f1.ad.value !== "") && (f1.dd.value !== ""))
+                    {
+                        alert("\n Booking Successful !!");
+                    }
+
+
+-->

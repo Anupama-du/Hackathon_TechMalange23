@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style1.css">
+        <title>COVID BITE</title>
+
+         <!-- font awesome cdn link  -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <header>      
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+      
+            <nav class="navbar">
+                <a href="Home.html">Home</a></li>
+                <a href="Booking.html">Booking</a></li>
+                <a href="Self Try-Out.html">Self Test</a></li>
+                <a href="Contact.html">Contact</a></li>
+                <a href="FAQs.html">FAQ's</a></li>
+                <a href="Hospitals.html">Hospitals</a></li>
+                <a href="Tips.html">Tips</a></li>
+                <a href="Feedback.html">Feedback</a></li>
+                <a href="Login.html">Login</a></li>
+            </nav>
+      
+            <div class="icons">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="login-btn"></i>
+            </div>
+        </header>
+
+      <h1 class = "heading">
+        <span> S </span>
+        <span> I </span>
+        <span> G </span>
+        <span> N </span>
+        <span class = "space"> </span>
+        <span> - </span>
+        <span> U </span>
+        <span> P </span>
+      </h1>
+
+      <div class="row">
+        <div class="image6">
+            <img src="Images and Videos/Doctors-bro.svg" alt="">
+        </div>
+            <h2>
+                <form>
+                    <div class="inputBox">
+                        User Name : <input type="text" id="un" name="un" required/>
+                    </div>
+                  
+                    <div class="inputBox">
+                        E-mail :<input type="email" id="e" name="e"  required/>
+                    </div>
+          
+                    <div class="inputBox">
+                        DOB : <input type="date" id="d" name="d"/>
+                    </div>
+                 
+                    <div class="inputBox">
+                        Password : <input type="password" id="p" name="p" required/>
+                    </div>
+        
+                    <div class="inputBox">
+                        Confirm Password : <input type="password" id="cp" name="cp" required/>
+                    </div>
+                 
+                    <div class="inputBox">
+                        Phone No. : <input type="text" id="n" name="n" />
+                    </div>
+             
+                    <br>
+                    <div class="inputBox">
+                        Gender: <nbsp><br>
+                            <nbsp><br>
+                                &nbsp;&nbsp;Male: <input type="radio" name="gender" value="male"> &nbsp;
+                                Female: <input type="radio" name="gender" value="female"> &nbsp;
+                                Other: <input type="radio" name="gender" value="other"> &nbsp;
+                            </nbsp>
+                    </div>
+                    
+                    
+                    <br>
+                    
+
+                    <input type="submit" class="btn"  value="Sign-Up" name="Sign-Up"  onclick="validation(this.form)"/>
+                    &nbsp;<input type="reset" class="btn" value="Reset" name="Reset" />
+
+                    <div class="signin">
+                        <h4>Already a member?</h4>
+                        <a href="Login.html">Login Now</a>
+                    </div>   
+
+                    </form>
+            </h2>
+        </div>
+        
+        <script>
+            
+            //check email is valid
+            function check_Email(input) 
+            {
+                const re = /^([A-z | 0-9]{3,50})@([A-z]{5,50}).([A-z]{3,50})$/;
+                
+                if (!input.match(re)) 
+                {
+                    return false;
+                } 
+            }
+
+            //check phone no. is valid
+            function check_Phone(input) 
+            {
+                const ph = /^\+([1-9]{2})-([1-9]{1})([0-9]{9})$/;
+                
+                if (!input.match(ph)) 
+                {
+                    return false;
+                } 
+            }
+
+            //check input lenght
+            function check_Length(input, min, max) 
+            {
+                if((input.value.length < min) || (input.value.length > max)) 
+                {
+                    return false;
+                }
+            }
+
+            // check gender
+
+            function check_Gender(input) 
+            {
+                $(':radio').each(function()
+                                {
+                                    if($(this).is(':checked'))
+                                    {
+                                        return true;
+                                    }
+
+                                    else
+                                    {
+                                        return false;
+                                    }
+                                })
+            }
+
+            // check country
+
+            function check_Country(input) 
+            {
+                $('country').each(function()
+                                {
+                                    if($(this).is(':selected'))
+                                    {
+                                        return true;
+                                    }
+
+                                    else
+                                    {
+                                        return false;
+                                    }
+                                })
+            }
+
+            // check interset
+
+            function check_Interest(input) 
+            {
+                $(':checkbox').each(function()
+                                {
+                                    if($(this).is(':checked'))
+                                    {
+                                        return true;
+                                    }
+
+                                    else
+                                    {
+                                        return false;
+                                    }
+                                })
+            }
+
+
+
+            function validation(f1)
+            {
+                    // trim to remove the whitespaces
+                    const uname = f1.un.value.trim();
+                    const email = f1.e.value.trim();
+                    const pass = f1.p.value.trim();
+                    const cpass = f1.cp.value.trim();
+                    const phone = f1.n.value.trim();
+                    
+                    if((uname === '') || (email === '') || (pass === '') || (cpass === '') || (phone === ''))
+                    {
+                        alert("Please enter credentials!!"); 
+                    }
+
+                    else
+                    {
+                        if(uname === '') 
+                        {
+                            alert('Username cannot be blank');
+                        } 
+
+                        else if(!check_Length(uname, 3, 15))       
+                        {
+                            alert('Invalid username');
+                        }
+                                                
+                        if(email === '') 
+                        {
+                            alert('Email cannot be blank');
+                        } 
+                        
+                        else if (!check_Email(email)) 
+                        {
+                            alert('Invalid email');
+                        } 
+
+                        if(pass === '') 
+                        {
+                            alert('Password cannot be blank');
+                        } 
+
+                        else if(!check_Length(pass, 6, 25))
+                        {
+                            alert('Invalid Password');
+                        }
+                        
+                        if(c_pass === '') 
+                        {
+                            alert('Confirm Your Password');
+                        } 
+                        
+                        else if(pass !== c_pass) 
+                        {
+                            alert('Passwords does not match');
+                        } 
+
+                        if(phone === '') 
+                        {
+                            alert('Phone No. cannot be blank');
+                        } 
+                        
+                        else if (!check_Phone(phone)) 
+                        {
+                            alert('Invalid Phone No.');
+                        } 
+
+                        if (!check_Gender(g)) 
+                        {
+                            alert('Please Mention Your Gender');
+                        } 
+
+                        if (!check_Country(c)) 
+                        {
+                            alert('Please Mention Your Country');
+                        } 
+
+                        if (!check_Interest(c)) 
+                        {
+                            alert('Please Mention Your Interest');
+                        } 
+                        
+                        if((uname !== '') && (email !== '') && (pass !== '') && (cpass !== '') && (phone !== ''))
+                        {
+                            alert("Welcome ", uname, "!!"); 
+                        }
+                    }
+                }
+
+        </script>
+    
+    </body>
+</html>
+
+
+
+

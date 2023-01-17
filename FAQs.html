@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style4.css">
+        <title>COVID BITE</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       
+    </head>
+
+    <body >
+      <header>      
+        <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+  
+        <nav class="navbar">
+          <a href="Home.html">Home</a></li>
+          <a href="Booking.html">Booking</a></li>
+          <a href="Self Try-Out.html">Self Test</a></li>
+          <a href="Contact.html">Contact</a></li>
+          <a href="FAQs.html">FAQ's</a></li>
+          <a href="Hospitals.html">Hospitals</a></li>
+          <a href="Tips.html">Tips</a></li>
+          <a href="Feedback.html">Feedback</a></li>
+          <a href="Login.html">Login</a></li>
+      </nav>
+  
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+    </header>
+    
+        <h1 class = "heading">
+            <span> F </span>
+            <span> A </span>
+            <span> Q </span>
+            <span> ' </span>
+            <span> s </span>
+        </h1>
+
+  <div class="row" style = "margin-left: 60px ; margin-right: 60px; font-size: 20px;" >
+
+      
+      <button class="accordion"  style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;" >What precautionary measures should one take to prevent getting infected from COVID?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px; width : 120%;line-height:1.8;" >
+        <p> One is advised to incorporate following things in their lifestyle :-</p>
+          <ul>
+            <li>Wear mask.</li>
+            <li>Maintain social distancing as much as possible </li>
+            <li>Keep yourself hydrated.</li>
+            <li>Get vaccinated against COVID.</li>
+          </ul>
+      </div>
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">Can a person get COVID from the infected person?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;width : 120%;">
+        <p>COVID is a contagious disease any physical contact with the infected persom may transmit COVID to healthy person. </p>
+      </div>
+      <button class="accordion" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">What are the services available in COVID-Bite?</button>
+      <div class="panel"  style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;">
+        <p>COVID-Bite provides a safe space for users to get correctly diagnosed for COVID from their homes. It allows users to book an appointment eith doctors and get to know their nearby medical facilities.Aditionally, it also provides the users with the best practices and mental advisiories to stay healthy in pandemic.</p>
+      </div>
+      
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">How can one book appointment?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;">
+        <p>One can book appointment through the Book Appointment tab on the website, by selecting the appropiate location, date, time-slot and the desired doctor.</p>
+      </div>
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">Is recovery possible from COVID?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;width : 120%;">
+        <p>Yes, if appropiate health measures are provided to the patient at correct time, patient can recoveer from COVID.</p>
+      </div>
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">What are the symptoms of COVID-19?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;width : 120%;line-height:1.8;">
+        <p>The most common symptoms of COVID-19 are :- </p>
+        <ul>
+
+        <li>Fever</li>
+        <li>Nasal congestion</li>
+        <li>Sore throat</li>
+          <li> Fatigue</li>
+         <li>Dry cough</li> 
+      </ul>
+      </div>
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">Which age group is more suspectible to getting infected by COVID?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;">
+        <p>Though COVID can affect any person of any age group. People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. </p>
+      </div>
+      <button class="accordion"style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;">Which should one get tested for COVID?</button>
+      <div class="panel" style = "padding-left: 50px ; padding-right: 50px;font-size: 20px;line-height:1.8;">
+        <p>People with symptoms of COVID and the people who have been in contact with the COVID infected person must get tested for COVID. </p>
+      </div>
+      
+      
+    
+  </div>
+      <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+      </script>
+      
+      </body>
+      </html>

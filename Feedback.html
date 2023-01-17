@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <header>        
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3> 
+
+            <nav class="navbar">
+              <a href="Home.html">Home</a></li>
+              <a href="Booking.html">Booking</a></li>
+              <a href="Self Try-Out.html">Self Test</a></li>
+              <a href="Contact.html">Contact</a></li>
+              <a href="FAQs.html">FAQ's</a></li>
+              <a href="Hospitals.html">Hospitals</a></li>
+              <a href="Tips.html">Tips</a></li>
+              <a href="Feedback.html">Feedback</a></li>
+              <a href="Login.html">Login</a></li>
+          </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+    </header>
+
+    <h1 class = "heading">
+        <span> F </span>
+        <span> E </span>
+        <span> E </span>
+        <span> D </span>
+        <span> B </span>
+        <span> A </span>
+        <span> C </span>
+        <span> K </span>
+    </h1>
+
+    <div class="container2">
+      <div class="post">
+        <div class="text">Thanks for rating us!!</div>
+        <br>
+        <div class="edit">EDIT</div>
+      </div>
+      <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form action="#">
+          <header>
+                <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>  
+
+      <nav class="navbar">
+        <a href="Home.html">Home</a></li>
+        <a href="Booking.html">Booking</a></li>
+        <a href="Self Try-Out.html">Self Test</a></li>
+        <a href="Contact.html">Contact</a></li>
+        <a href="Booking.html">FAQ's</a></li>
+        <a href="Hospitals.html">Hospitals</a></li>
+        <a href="Tips.html">Tips</a></li>
+        <a href="Feedback.html">Feedback</a></li>
+        <a href="Login.html">Login</a></li>
+    </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+          </header>
+<br><br><br><br>
+          <div class="textarea">
+            <textarea cols="30" placeholder="Describe your experience.."></textarea>
+          </div>
+          <div class="btn1">
+            <button type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <script>
+      const btn = document.querySelector("button");
+      const post = document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      btn.onclick = ()=>{
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = ()=>{
+          widget.style.display = "block";
+          post.style.display = "none";
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

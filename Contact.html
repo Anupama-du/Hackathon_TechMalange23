@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title> COVID BITE</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <header>      
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+      
+            <nav class="navbar">
+                <a href="Home.html">Home</a></li>
+                <a href="Booking.html">Booking</a></li>
+                <a href="Self Try-Out.html">Self Test</a></li>
+                <a href="Contact.html">Contact</a></li>
+                <a href="FAQs.html">FAQ's</a></li>
+                <a href="Hospitals.html">Hospitals</a></li>
+                <a href="Tips.html">Tips</a></li>
+                <a href="Feedback.html">Feedback</a></li>
+                <a href="Login.html">Login</a></li>
+            </nav>
+      
+            <div class="icons">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="login-btn"></i>
+            </div>
+        </header>
+        <br><br><br><br>
+
+        <h1 class="heading">
+            <span>R</span>
+            <span>E</span>
+            <span>A</span>
+            <span>C</span>
+            <span>H</span>
+            <span>-</span>
+            <span>U</span>
+            <span>S</span>
+        </h1>
+    
+        <div class="row">
+    
+            <div class="image5">
+                <img src="Images and Videos/Contact us-amico.png" alt="">
+            </div>
+    
+            <form>
+                <div class="inputBox">
+                    <input type="text" name="n" placeholder="Name" required>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="e" placeholder="Email" required>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="p" placeholder="Phone Number">
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="m" placeholder="Write Message" required>
+                </div>
+
+                <!--<textarea placeholder="Write Message" name="" id="" cols="30" rows="10"></textarea>
+                <input type="submit" class="btn" value="send message">
+                <button type="submit" class="btn" onclick="validation(this.login_form)"> Send Message </button>
+            -->
+
+                <input type="submit" class="btn" onclick="validation(this.form)">
+                
+            </form>
+    
+        </div>
+        
+        <script>
+           function validation(f1)
+           {
+                if((f1.n.value == "") && (f1.p.value == "") && (f1.e.value == "") && (f1.m.value == ""))
+                {
+                    alert("Please fill out the details !!!")
+                }
+
+                else
+                {
+                    if(f1.n.value === '') 
+                    {
+                        alert('Name cannot be blank');
+                    } 
+                       
+                    if(f1.e.value === '') 
+                    {
+                        alert('Email cannot be blank');
+                    } 
+
+                    else if((f1.n.value !== '') && (f1.e.value !== ''))
+                    {
+                        alert("Thanks for Reaching Out !!!")
+                    }
+                }                
+           }
+        </script>
+    
+    </body>
+</html>

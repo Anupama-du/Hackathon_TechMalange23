@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style1.css">
+        <title> Tour & Travel </title>
+
+         <!-- font awesome cdn link  -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <header>      
+            <h3><img src="Images and Videos/logo.png"></img> Covid Bite </h3>
+      
+            <nav class="navbar">
+                <a href="Home.html">Home</a></li>
+                <a href="Booking.html">Booking</a></li>
+                <a href="Self Try-Out.html">Self Test</a></li>
+                <a href="Contact.html">Contact</a></li>
+                <a href="Booking.html">FAQ's</a></li>
+                <a href="Hospitals.html">Hospitals</a></li>
+                <a href="Tips.html">Tips</a></li>
+                <a href="Feedback.html">Feedback</a></li>
+                <a href="Login.html">Login</a></li>
+            </nav>
+      
+            <div class="icons">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-user" id="login-btn"></i>
+            </div>
+        </header>
+
+      <h1 class = "heading">
+        <span> S </span>
+        <span> I </span>
+        <span> G </span>
+        <span> N </span>
+        <span class = "space"> </span>
+        <span> - </span>
+        <span> U </span>
+        <span> P </span>
+      </h1>
+
+      <div class="row">
+        <div class="image6">
+            <img src="blog-2.svg" alt="">
+        </div>
+            <h2>
+                <form>
+                    <div class="inputBox">
+                        Name : <input type="text" id="n" required/>
+                        <small>Error Message</small>
+                    </div>
+                  
+                    <div class="inputBox">
+                        E-mail :<input type="email" id="e"  required/>
+                        <small>Error Message</small>
+                    </div>
+          
+                    <div class="inputBox">
+                        DOB : <input type="date" id="d" />
+                        <small>Error Message</small>
+                    </div>
+                 
+                    <div class="inputBox">
+                        Password : <input type="password" id="p"  required/>
+                        <small>Error Message</small>
+                    </div>
+        
+                    <div class="inputBox">
+                        Confirm Password : <input type="password" id="cp"  required/>
+                        <small>Error Message</small>
+                    </div>
+                 
+                    <div class="inputBox">
+                        Phone No. : <input type="text" id="n" />
+                        <small>Error Message</small>
+                    </div>
+             
+                    <div class="inputBox">
+                        Gender: <nbsp><br>
+                            <nbsp><br>
+                                &nbsp;&nbsp;Male: <input type="radio" name="gender" value="male"> &nbsp;
+                                Female: <input type="radio" name="gender" value="female"> &nbsp;
+                                Other: <input type="radio" name="gender" value="other"> &nbsp;
+                            </nbsp>
+                    </div>
+                    
+                    <div class="inputBox">
+                        Select Country : 
+                        <nbsp>
+                                <select class="select-option" name="country" id="country">
+                                <option value="">Select Country</option>
+                                <option value="India">India</option>
+                                <option value="Spain">Spain</option>
+                                <option value="UK">UK</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="Russia">Russia</option>
+                                <option value="America">America</option>
+                                </select>
+                            </nbsp>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        Select your area of Interest:<nbsp><br>
+                            <nbsp><br>
+                                Road Trip: <input type="checkbox" name="Interest" value="road">
+                                Trekking: <input type="checkbox" name="Interest" value="trekking">
+                                Group Tour: <input type="checkbox" name="Interest" value="group_tour">
+                                Solo Trip: <input type="checkbox" name="Interest" value="solo">
+                            </nbsp>
+                    </div>
+                    <br><br>
+
+                    <input type="submit" class="btn"  value="Sign-Up" name="Sign-Up"  onclick="validation(this.form)"/>
+                    &nbsp;<input type="reset" class="btn" value="Reset" name="Reset" />
+
+                    <div class="signin">
+                        <h4>Already a member?</h4>
+                        <a href="Login.html">Login Now</a>
+                    </div>   
+
+                    </form>
+            </h2>
+        </div>
+        
+        <script>
+
+            const username = document.getElementById('n');
+            const email = document.getElementById('e');
+            const password = document.getElementById('p');
+            const password2 = document.getElementById('cp');
+
+            function validation(f1)
+            {
+                if((f1.n.value == "") && (f1.e.value == "") && (f1.p.value == "") && (f1.cp.value == ""))
+                {
+                    alert("Please enter credentials!!"); 
+                }
+
+                else
+                {
+                    checkRequired([n, e, p, cp]);
+                    checkLength(n, 3, 15);
+                    checkLength(p, 6, 25);
+                    checkEmail(e);
+                    checkPasswordsMatch(p, cp);
+                }
+           }
+
+           //check required fields
+           function checkRequired(inputArr) {
+                inputArr.forEach(function (input) {
+                    if (input.value.trim() === '') {
+                        showError(input, `${getFieldName(input)} is required`);
+                    } 
+                    else {
+                        showSuccess(input);
+                    }
+                });
+            }
+
+            // show input error message
+            function showError(input, message) {
+                document.write("error");
+                const formControl = input.parentElement;
+                formControl.className = 'inputBox error';
+                const small = formControl.querySelector('small');
+                small.innerText = message;
+            }
+
+            // show success message
+            function showSuccess(input) {
+                formControl = input.parentElement;
+                formControl.className = 'inputBox success';
+            }
+
+            //check email is valid
+            function checkEmail(input) {
+            const re = /^([A-z | 0-9]{3,50})@([A-z]{5,50}).([A-z]{3,50})$/;
+            if (re.test(input.value.trim())) {
+                showSuccess(input);
+            } else {
+                showError(input, 'Enail is not valid');
+            }
+            }
+
+            //check input lenght
+            function checkLength(input, min, max) {
+            if (input.value.length < min) {
+                showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+            } else if (input.value.length > max) {
+                showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+            } else {
+                showSuccess(input);
+            }
+            }
+
+            // check passwords match
+
+            function checkPasswordsMatch(input1, input2) {
+            if (input1.value !== input2.value) {
+                showError(input2, 'Passwords do not match');
+            }
+            }
+
+            // Get fieldname
+            function getFieldName(input) {
+            return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+            }
+
+        </script>
+    
+    </body>
+</html>
+
+
+
+<!--
+
+        
+                <div class="signin">
+					<h4>Already a member?</h4>
+					<a href="Login.html">Login Now</a>
+				</div>                   
+                
+
+
+                
+                    <div class="inputBox">
+                        <input type="checkbox"> I accepted all terms and conditions <br><br>
+                    </div>
+                    
+
+
+
+                    
+
+
+          /*  var a = /^([A-z | 0-9]{3,50})@([A-z]{5,50}).([A-z]{3,50})$/;
+
+            function validate(f1)
+            {
+                if(f1.e.value.match(a))
+                {
+                    alert("E-mail is Valid!!");
+                }
+
+                else
+                {
+                    alert("Invalid E-mail !!");
+                }
+            }*/
+
+    
+            function validate(f1) 
+            {
+			    var a = f1.n.value.trim();
+                var b = f1.p.value;
+                var c = f1.cp.value;
+
+				if (a.length < 6 | a.length > 14) 
+                {
+					alert("User Name is too large..");
+				}
+
+				if (b == "") 
+                {
+					alert("Please enter your password..");
+				}
+
+				if(b.length < 6)
+                {
+					alert("Password should be atleast 6 character long..");
+				}
+
+                if(b != c)
+                {
+                    alert("Password size mismatch..");
+                }
+			}
+
+
+-->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+    
+            function validate(f1) 
+            {
+			    var a = f1.n.value.trim();
+                var b = f1.p.value;
+                var c = f1.cp.value;
+
+				if (a.length < 6 | a.length > 14) 
+                {
+					alert("User Name is too large..");
+				}
+
+				if (b == "") 
+                {
+					alert("Please enter your password..");
+				}
+
+				if(b.length < 6)
+                {
+					alert("Password should be atleast 6 character long..");
+				}
+
+                if(b != c)
+                {
+                    alert("Password size mismatch..");
+                }
+			}
+
+
+-->
+            
+
+
+
+<!--
+
+        
+                <div class="signin">
+					<h4>Already a member?</h4>
+					<a href="Login.html">Login Now</a>
+				</div>                   
+                
+
+
+                
+                    <div class="inputBox">
+                        <input type="checkbox"> I accepted all terms and conditions <br><br>
+                    </div>
+                    
+
+    
+            function validate(f1) 
+            {
+			    var a = f1.n.value.trim();
+                var b = f1.p.value;
+                var c = f1.cp.value;
+
+				if (a.length < 6 | a.length > 14) 
+                {
+					alert("User Name is too large..");
+				}
+
+				if (b == "") 
+                {
+					alert("Please enter your password..");
+				}
+
+				if(b.length < 6)
+                {
+					alert("Password should be atleast 6 character long..");
+				}
+
+                if(b != c)
+                {
+                    alert("Password size mismatch..");
+                }
+			}
+
+
+-->
+            
